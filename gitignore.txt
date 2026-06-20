@@ -1,0 +1,25 @@
+# Maven build output
+target/
+*.class
+
+# Maven wrapper jar (downloaded automatically)
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE files
+.idea/
+*.iml
+.eclipse/
+.settings/
+.classpath
+.project
+*.sts4-cache
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# NOTE: keystore.p12 is intentionally included in this repository
+# for demonstration purposes only. In a production project,
+# keystores and credentials should never be committed to source control.
