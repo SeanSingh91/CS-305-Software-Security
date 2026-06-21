@@ -1,6 +1,6 @@
 # CS-305-Software-Security
-**Develpor** Sean Singh
-**Date** June 2026
+**Develpor** Sean Singh 
+**Date** June 2026 
 |---------------------------------------
 ## Project Overview
 This project is a refactored Spring Boot web application built for **Artemis Financial**, a financial 
@@ -20,19 +20,20 @@ The refactoring accomplishes two primary goals:
 - Writing secure communications through the application of current encryption technologies
 - Designing and implementing code that complies with software security testing protocols
 
----
+|----------------------------------------
 
 ## Technologies Used
 
-| Technology | Version |
-|----------------------------------------
-| Java | 1.8 (runs on JDK 11+) 
-| Spring Boot | 2.2.4.RELEASE 
-| Apache Maven | 3.9.x 
-| OWASP Dependency-Check | 10.0.2 
-| Keystore format | PKCS12 
-| Hash algorithm | SHA-256 (FIPS 180-4) 
-| Certificate algorithm | SHA384withRSA, 2048-bit RSA key 
+
+| Technology | Version | 
+|---|---|
+| Java | 1.8 (runs on JDK 11+) |
+| Spring Boot | 2.2.4.RELEASE |
+| Apache Maven | 3.9.x |
+| OWASP Dependency-Check | 10.0.2 |
+| Keystore format | PKCS12 |
+| Hash algorithm | SHA-256 (FIPS 180-4) |
+| Certificate algorithm | SHA384withRSA, 2048-bit RSA key | 
 
 |----------------------------------------
 
