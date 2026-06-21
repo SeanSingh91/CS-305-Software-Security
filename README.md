@@ -1,12 +1,68 @@
 # CS-305-Software-Security
-**Develpor** Sean Singh 
+**Develper** Sean Singh 
 **Date** June 2026 
+|-----------------------------------
+
+### Client Summary
+Artemis Financial is a financial consulting firm that develops individualized savings,
+retirement, investment, and insurance plans for its clients. The company needed to
+modernize its public-facing web application by adding secure data transmission and
+a data integrity verification mechanism. Specifically, they wanted to ensure that
+data exchanged between the server and clients had not been tampered with in transit.
+
+### What I Did Well?
+I effectively identified the need for both transport-layer security and data integrity
+verification, then implemented both using industry-standard cryptographic tools.
+Implementing SHA-256 checksums and migrating the application from HTTP to HTTPS using
+a self-signed X.509 certificate demonstrated a strong understanding of layered security.
+Secure coding is critical because financial applications handle sensitive personal and
+financial data, a single vulnerability can lead to data breaches, regulatory penalties,
+and loss of client trust. Software security adds value by protecting a company's
+reputation, ensuring regulatory compliance, and reducing the long-term cost of breaches.
+
+### Challenges and Helpful Aspects
+The most challenging part of the vulnerability assessment was working with the OWASP
+Dependency-Check tool, particularly updating the plugin from version 5.3.0 to 10.0.2
+to maintain compatibility with NIST's NVD API 2.0. It also required careful analysis
+to distinguish pre-existing platform CVEs (inherited from Spring Boot 2.2.4's bundled
+Tomcat 9.0.30) from vulnerabilities introduced by my own changes. This process was
+ultimately very helpful in understanding how transitive dependencies can introduce
+security risks even when your own code is clean.
+
+### Increasing Layers of Security
+I increased security through multiple layers: HTTPS/TLS for encrypted communication,
+SHA-256 for data integrity verification, PKCS12 keystore format for certificate
+storage, and RSA-2048 for the certificate key pair. In the future, I would continue
+using the OWASP Dependency-Check tool to assess third-party library vulnerabilities,
+consult the NIST National Vulnerability Database (NVD) for known CVEs, and apply
+the principle of least privilege across all application components.
+
+### Ensuring Functionality and Security
+After refactoring, I verified the application was functional by running it locally
+and confirming the /hash endpoint returned the correct SHA-256 digest over HTTPS on
+port 8443. To check for newly introduced vulnerabilities, I ran `mvn verify` to
+execute the OWASP dependency-check scan and reviewed the generated HTML report to
+confirm that no new CVEs were introduced by my changes.
+
+### Helpful Tools and Practices
+The most valuable tools and practices from this project include: the OWASP
+Dependency-Check Maven plugin for automated CVE scanning, Java Keytool for
+certificate generation, the java.security.MessageDigest API for cryptographic
+hashing, and Spring Boot's SSL configuration properties for enabling HTTPS. Following
+NIST standards (FIPS 180-4 for SHA-256, SP 800-57 for key management) as a
+framework for cryptographic decisions is a practice I will carry into future work.
+
+### What I Would Show Employers?
+I would highlight this project as evidence of my ability to identify security
+vulnerabilities in a real-world application and implement meaningful, standards-based
+mitigations. Specifically, I would point to the migration from HTTP to HTTPS, the
+implementation of a cryptographic checksum endpoint, and the use of automated
+dependency scanning, all documented clearly in this repository. This project
+demonstrates that I can write secure code, reason about cryptographic standards,
+and communicate technical security decisions effectively.
+
 |---------------------------------------
 ## Project Overview
-This project is a refactored Spring Boot web application built for **Artemis Financial**, a financial 
-consulting firm that develops individualized savings, retirement, investment, and insurance plans for its customers. 
-Artemis Financial needed to modernize its public-facing web application by adding secure communication mechanisms and a 
-data verification step to ensure that data transmitted between the server and clients has not been altered in transit.
 
 The refactoring accomplishes two primary goals:
 
